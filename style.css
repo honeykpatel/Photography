@@ -1,0 +1,185 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* ===== Scrollbar CSS ===== */
+  /* Firefox */
+  * {
+    scrollbar-width: auto;
+    scrollbar-color: #000000 #f3f3f5;
+  }
+
+  /* Chrome, Edge, and Safari */
+  *::-webkit-scrollbar {
+    width: 1rem;
+  }
+
+  *::-webkit-scrollbar-track {
+    background: #f3f3f5;
+  }
+
+  *::-webkit-scrollbar-thumb {
+    background-color: #000000;
+    border-radius: 0px;
+    border: 1px solid #ffffff;
+  }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body{
+  background-color: #F3F3F5;  
+}
+
+
+.container{
+  height: 100%;
+}
+
+.title{
+  display:flex;
+  justify-content:center;
+  padding-top: 2.188rem;
+}
+
+.title>h1{
+  font-family: 'Poiret One', cursive;
+  font-size: 3.25rem;
+}
+
+.navbar{
+  display: flex;
+  justify-content: center;
+}
+
+.navbar>li{
+  width: 20.125rem;
+  font-size: 2.188rem;
+  font-family: 'Poiret One', cursive;
+  display: flex;
+  justify-content: space-between;
+}
+
+.navbar>li>a {
+  color: #000;
+  text-decoration: none; 
+  display: inline-block;
+  position: relative;
+}
+.navbar>li>a:after {    
+  background: none repeat scroll 0 0 transparent;
+  bottom: 0;
+  content: "";
+  display: block;
+  height: 2px;
+  left: 50%;
+  position: absolute;
+  background: #000;
+  transition: width 0.3s ease 0s, left 0.3s ease 0s;
+  width: 0;
+}
+.navbar>li>a:hover:after { 
+  width: 100%; 
+  left: 0; 
+}
+
+
+.img-grid>div>img {
+  filter: grayscale(100%);
+  transition: filter 0.1s, transform ease-in 0.1s;
+}
+
+.img-grid>div>img:hover{
+  filter: none;
+  transform: scale(1.05);
+}
+
+.img-grid{
+	display: grid;
+  padding: 2rem 4.5rem 2rem 4.5rem;
+	grid-gap: 5px;
+	grid-template-columns: repeat(auto-fit, minmax(100px,1fr));
+	grid-auto-rows: 100px;
+	grid-auto-flow: dense;
+}
+
+.img-grid>div>img{
+	display: block;
+	width: 100%;
+	height: 100%;
+}
+
+.horizontal{
+	grid-column: span 2;
+}
+
+.vertical{
+	grid-row: span 2;
+}
+
+.big{
+	grid-row: span 2;
+	grid-column: span 2;
+}
+
+
+.quote-div{
+  padding: 2rem;
+  font-family: 'Poiret One', cursive;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.quote{
+  text-align: center;
+  font-size: 2.813rem;
+  font-style: oblique;
+}
+
+.author{
+  padding: 1rem;
+  font-size: 2rem;
+}
+
+
+.about-div{
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
+
+.pfp{
+  width: 23rem;
+  height: 30.666rem;
+}
+
+.pfp>img{
+  max-width:100%;
+  max-height:100%;
+  margin: auto;
+  display: block;
+  filter: grayscale(100%);
+}
+
+.about-para{
+  width: 23rem;
+  height: 30.666rem;
+  background-color: black;
+  color: white;
+  font-family: 'Poiret One', cursive;
+  font-size: 2rem;
+  padding: 1rem;
+}
+
+@media only screen and (max-width: 960px) {
+  .about-div{
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
